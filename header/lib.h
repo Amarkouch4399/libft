@@ -4,4 +4,6 @@
 int	isalpha(int character);
 int	isdigit(int character);
 
+
+
 #endif

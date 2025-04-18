@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 16:11:23 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 20:59:28 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/04/18 20:09:40 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/04/18 20:52:51 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+#include <stdio.h>
+*/
+#include "lib.h"
 
-
-int	isalpha(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	if (!s[i])
+		return (NULL);
+	while (s[i])
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
 /*
 int	main()
 {
-	char	*tab = "oussama";
-	
-	int	i = 0;
-
-	while (tab[i])
-	{
-		if (isalpha(tab[i]) == 0)
-		{
-			printf("%s\n", "error");
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	char	*tab = "ouss";
+	printf("%s\n", ft_strchr(tab, 's'));
 }
 */
