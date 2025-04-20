@@ -6,13 +6,13 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:45:43 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 18:10:54 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:10:01 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
-#include "lib.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

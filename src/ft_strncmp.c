@@ -6,14 +6,14 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 20:55:28 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 18:37:31 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:13:06 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 #include <string.h>
 */
-#include "lib.h"
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

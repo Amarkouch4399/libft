@@ -6,10 +6,10 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:44:23 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 18:26:26 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:12:14 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "lib.h"
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

@@ -6,13 +6,13 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:04:28 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 18:30:45 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:11:42 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
-#include "lib.h"
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

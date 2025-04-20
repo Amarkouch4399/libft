@@ -6,13 +6,13 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 20:09:40 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 20:52:51 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:12:46 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
-#include "lib.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

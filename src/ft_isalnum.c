@@ -6,13 +6,13 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:52:34 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 18:48:07 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:11:55 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
-#include "lib.h"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

@@ -1,0 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/20 20:06:15 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/04/20 20:20:59 by ouamarko         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	char	*tab1;
+	char	*tab2;
+	unsigned int	i;
+	unsigned int	j;
+
+	i = 0;
+	j = 0;
+	tab1 = (unsigned char *)big;
+	tab2 = (unsigned char *)little;
+	if (!tab2)
+		return (tab1);
+	while (tab1[i] && i < len)
+	{
+		j = 0;
+		while (tab1[i] == tab2[j] && tab2[j])
+		{
+			i++;
+			j++;
+		}
+		if (tab2[j] == '\0')
+			return (&tab1[i - j]);
+		i++;
+	}
+	return (0);
+}
+#include <string.h>
+#include <stdio.h>
+int	main()
+{
+	char str[50] = "Oussamugygybgby";
+	char *to_find = "ouss";
+
+	printf("%s", ft_strnstr(str, to_find, 4));
+	printf ("%s", "\n");
+	printf("%s", ft_strnstr(str, to_find, 4));
+}

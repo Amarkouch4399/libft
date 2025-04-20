@@ -6,10 +6,10 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:52:44 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 19:10:57 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:10:33 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "lib.h"
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

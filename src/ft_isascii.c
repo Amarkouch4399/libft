@@ -6,10 +6,10 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:44:38 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 18:26:04 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:12:05 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "lib.h"
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

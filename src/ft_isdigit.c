@@ -6,13 +6,13 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:11:02 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 18:22:04 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:10:24 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
-#include "lib.h"
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
