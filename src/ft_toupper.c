@@ -6,13 +6,15 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 17:55:29 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 18:04:13 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:45:02 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
-int ft_toupper(int c)
+#include "lib.h"
+
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 	{

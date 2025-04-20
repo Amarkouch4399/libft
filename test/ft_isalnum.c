@@ -6,29 +6,35 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:52:34 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/14 17:12:13 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:50:08 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "lib.h"
+/*
 #include <stdio.h>
-int	isalnum(int c)
-{
-	if (isalpha(c) == 0 && isdigit(c) == 0)
-		return (0);
-	return (1);
-}
+*/
+#include "lib.h"
 
+int	ft_isalnum(int c)
+{
+	if (ft_isalpha(c) || (ft_isdigit(c)))
+		return (1);
+	return (0);
+}
 int	main()
 {
-	char	*tab = "123 456fd";
+	char	*tab = "123456fd";
 
 	int	i = 0;
+
 	while (tab[i])
 	{
-		if (isalnum(tab[i]) == 0)
-			return 0;
+		if (ft_isalnum(tab[i]) == 0)
+		{
+			printf("%s\n", "error");
+			return (0);
+		}
 		i++;
 	}
 	return (1);
+
 }

@@ -6,12 +6,14 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:44:57 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/16 16:02:35 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:24:56 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
+#include "lib.h"
+
 size_t	ft_strlen(const char *s)
 {
 	int	i;

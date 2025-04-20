@@ -6,12 +6,14 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:54:19 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 17:20:02 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:27:19 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
+#include "lib.h"
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	unsigned int	i;

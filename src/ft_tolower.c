@@ -6,13 +6,15 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:04:28 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 18:06:30 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:30:45 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
-int ft_tolower(int c)
+#include "lib.h"
+
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 	{

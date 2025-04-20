@@ -6,27 +6,35 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 17:54:02 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 17:54:09 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 19:26:13 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <stdio.h>
+*/
+#include "lib.h"
 
-size_t	ft_len(char *tab)
+size_t	ft_strlen(const char *s)
 {
-	int	i = 0;
-	while (tab[i])
+	int	i;
+
+	i = 0;
+	while (s[i])
 		i++;
 	return (i);
 }
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i = 0;
-	unsigned int	dst_len = ft_len(dst);
-	unsigned int	src_len = ft_len((char *)src);
-	unsigned int	j = dst_len;
+	unsigned int	i;
+	unsigned int	dst_len;
+	unsigned int	src_len;
+	unsigned int	j;
 
+	dst_len = ft_len(dst);
+	src_len = ft_len((char *)src);
+	j = dst_len;
+	i = 0;
 	if (size <= dst_len)
 		return (size + src_len);
 	while (src[i] && j < size - 1)
@@ -38,6 +46,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[j] = '\0';
 	return (dst_len + src_len);
 }
+/*
 int	main()
 {
 	char	src[7] = "oussama";
@@ -47,3 +56,4 @@ int	main()
 	printf("%s\n", dst);
 
 }
+*/

@@ -6,16 +6,17 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:52:34 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/16 16:05:14 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:48:07 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
+#include "lib.h"
+
 int	ft_isalnum(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'))
+	if (ft_isalpha(c) || (ft_isdigit(c)))
 		return (1);
 	return (0);
 }

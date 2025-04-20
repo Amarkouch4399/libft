@@ -6,12 +6,14 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:11:02 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:05 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:22:04 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
+#include "lib.h"
+
 int	ft_isdigit(int c)
 {
 	if (c > 48 && c < 57)

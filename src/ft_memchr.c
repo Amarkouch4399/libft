@@ -1,46 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 17:22:01 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 17:50:39 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/04/20 18:52:44 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/04/20 19:10:57 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "lib.h"
 
-#include <stdio.h>
-
-size_t	ft_len(char *tab)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
-		i++;
-	return (i);
-}
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
+	unsigned char	*tab;
 	unsigned int	i;
 
-
 	i = 0;
-	while (i < size - 1  && src[i])
+	tab = (unsigned char *)s;
+	while (i < n)
 	{
-		tab_dest[i] = tab_src[i];
+		if (tab[i] == c)
+			return (&tab[i]);
 		i++;
 	}
-	tab_dest[i] = '\0';
-	return (ft_len(tab_dest) + ft_len(tab_src));
+	return (NULL);
 }
+/*
 int	main()
 {
-	char	src[7] = "oussama";
-	char	dst[7];
-
-	printf ("%ld\n", ft_strlcat(dst, src, 3));
-	printf("%s\n", dst);
-
+	char	*tab = "ouss";
+	printf("%p\n", ft_memchr(tab, 'u', 3));
 }
+*/

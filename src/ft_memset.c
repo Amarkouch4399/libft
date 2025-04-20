@@ -6,11 +6,13 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:44:12 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 15:59:30 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:23:28 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <stdio.h>
+*/
+#include "lib.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

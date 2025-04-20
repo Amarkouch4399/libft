@@ -6,12 +6,15 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:11:23 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 20:59:28 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:21:47 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+#include <stdio.h>
+*/
+#include "lib.h"
 
-
-int	isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
@@ -26,7 +29,7 @@ int	main()
 
 	while (tab[i])
 	{
-		if (isalpha(tab[i]) == 0)
+		if (ft_isalpha(tab[i]) == 0)
 		{
 			printf("%s\n", "error");
 			return (0);

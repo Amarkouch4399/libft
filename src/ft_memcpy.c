@@ -6,12 +6,14 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:00:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/18 17:20:24 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:22:52 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 */
+#include "lib.h"
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*tab_src;
