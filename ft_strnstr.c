@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 20:06:15 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 20:20:59 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/21 16:59:04 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,32 +21,33 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	tab1 = (unsigned char *)big;
-	tab2 = (unsigned char *)little;
+	tab1 = (char *)big;
+	tab2 = (char *)little;
 	if (!tab2)
 		return (tab1);
 	while (tab1[i] && i < len)
 	{
 		j = 0;
-		while (tab1[i] == tab2[j] && tab2[j])
+		while (tab1[i + j] == tab2[j] && (i + j) < len)
 		{
-			i++;
+			if (tab2[j + 1] == '\0')
+				return (&tab1[i]);
 			j++;
 		}
-		if (tab2[j] == '\0')
-			return (&tab1[i - j]);
 		i++;
 	}
 	return (0);
 }
+/*
 #include <string.h>
 #include <stdio.h>
 int	main()
 {
-	char str[50] = "Oussamugygybgby";
-	char *to_find = "ouss";
+	char str[50] = "HelloOuss";
+	char *to_find = "O";
 
-	printf("%s", ft_strnstr(str, to_find, 4));
+	printf("%s", ft_strnstr(str, to_find, 6));
 	printf ("%s", "\n");
-	printf("%s", ft_strnstr(str, to_find, 4));
+	printf("%s", ft_strnstr(str, to_find, 6));
 }
+*/

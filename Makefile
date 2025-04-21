@@ -6,9 +6,10 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/04/18 21:04:05 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/04/21 18:06:30 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+NAME	= libft.a
 
 SRC	= ft_isalpha.c \
 	  ft_isdigit.c \
@@ -26,41 +27,35 @@ SRC	= ft_isalpha.c \
 	  ft_tolower.c \
 	  ft_strchr.c \
 	  ft_strrchr.c \
-	  ft_strncmp.c\
-
+	  ft_strncmp.c \
+	  ft_memchr.c \
+	  ft_memcmp.c \
+	  ft_strnstr.c \
+	  ft_atoi.c
 
 OBJS	= ${SRC:.c=.o}
 
-PRE	= ./srcs/
-
-HEAD	= ./includes/
-
-NAME	= libft.a
-
-AR	= ar rc
-
-RM	= rm -f
-
-LIB	= ranlib
-
-GCC	= gcc
-
+CC	= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
-all:	${NAME}
+AR	= ar rc
+RANLIB	= ranlib
 
-.c.o:	${GCC} ${CFLAGS} -c -I ${HEAD} $< -o ${<:.c=.o}
+all: ${NAME}
 
-${NAME}:	${OBJS}
-			${AR} ${NAME} ${OBJS}
-			${LIB} ${NAME}
+${NAME}: ${OBJS}
+	${AR} ${NAME} ${OBJS}
+	${RANLIB} ${NAME}
+
+%.o: %.c
+	${CC} ${CFLAGS} -c $< -o $@
 
 clean:
-		rm -f ${OBJS}
+	rm -f ${OBJS}
 
-fclean:		clean
-			rm -f ${NAME}
+fclean: clean
+	rm -f ${NAME}
 
-re:			fclean all
+re: fclean all
 
-.PHONY:		all clean fclean re
+.PHONY: all clean fclean re

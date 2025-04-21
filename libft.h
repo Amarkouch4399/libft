@@ -6,13 +6,14 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 19:27:59 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 19:34:28 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/21 17:43:38 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIB_H
 # define LIB_H
 
 # include <stdio.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int character);
 int		ft_isdigit(int character);
@@ -32,5 +33,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_atoi(const char *nptr);
+
 
 #endif

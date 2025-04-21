@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 16:52:34 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/20 18:50:08 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/04/21 17:43:51 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/04/21 18:40:11 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
-#include "lib.h"
 
-int	ft_isalnum(int c)
+#include <stdlib.h>
+#include "libft.h"
+
+void *ft_calloc(size_t nmemb, size_t size)
 {
-	if (ft_isalpha(c) || (ft_isdigit(c)))
-		return (1);
-	return (0);
-}
-int	main()
-{
-	char	*tab = "123456fd";
+	unsigned int	i;
+	char	*tab;
 
-	int	i = 0;
-
-	while (tab[i])
+	i = 0;
+	if (nmemb == 0 || size == 0)
+		return (0);
+	tab = malloc(sizeof(size) * nmemb);
+	while (i < nmemb)
 	{
-		if (ft_isalnum(tab[i]) == 0)
-		{
-			printf("%s\n", "error");
-			return (0);
-		}
+		tab[i] = 0;
 		i++;
 	}
-	return (1);
-
+	return (tab);
 }
