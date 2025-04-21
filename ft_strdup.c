@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 17:43:51 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/21 19:21:43 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/04/21 19:22:00 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/04/21 19:27:22 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *src)
 {
-	unsigned int	i;
-	char	*tab;
+	char	*copy;
+	int		i;
 
 	i = 0;
-	if (nmemb == 0 || size == 0)
+	while (src[i])
+		i++;
+	copy = malloc(sizeof(char) * (i + 1));
+	if (!(copy))
 		return (NULL);
-	tab = malloc(sizeof(size) * nmemb);
-	if (!tab)
-		return (NULL);
-	while (i < nmemb)
+	i = 0;
+	while (src[i])
 	{
-		tab[i] = 0;
+		copy[i] = src[i];
 		i++;
 	}
-	return (tab);
+	copy[i] = '\0';
+	return (copy);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+int	main()
+{
+	printf("%s\n", ft_strdup("ouss"));
+}
+*/
