@@ -6,7 +6,7 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/04/21 18:06:30 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/04/21 19:20:56 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= libft.a
@@ -31,7 +31,9 @@ SRC	= ft_isalpha.c \
 	  ft_memchr.c \
 	  ft_memcmp.c \
 	  ft_strnstr.c \
-	  ft_atoi.c
+	  ft_atoi.c \
+	  ft_calloc.c \
+	  ft_strdup.c
 
 OBJS	= ${SRC:.c=.o}
 
