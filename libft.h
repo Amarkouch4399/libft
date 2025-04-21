@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 19:27:59 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/21 17:43:38 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:19:23 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIB_H
 # define LIB_H
 
+# include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 
@@ -34,6 +35,9 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *nptr);
+void *ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(const char *src);
+char *ft_substr(char const *s, unsigned int start, size_t len);
 
 
 #endif
