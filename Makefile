@@ -6,7 +6,7 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/04/21 19:20:56 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/04/21 21:17:45 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= libft.a
@@ -44,6 +44,7 @@ AR	= ar rc
 RANLIB	= ranlib
 
 all: ${NAME}
+	@echo "Done ✅"
 
 ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
