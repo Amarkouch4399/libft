@@ -6,13 +6,21 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:59:14 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/21 17:07:42 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/22 19:17:40 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *nptr)
+static int	ft_overflow(int n)
+{
+	if (n < 0)
+		return (0);
+	else
+		return (-1);
+}
+
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	sign;
@@ -33,6 +41,8 @@ int ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		nb = nb * 10;
+		if (nb >= 9223372036854775807)
+			return (ft_overflow(sign));
 		nb = nb + (nptr[i] - '0');
 		i++;
 	}
@@ -43,8 +53,8 @@ int ft_atoi(const char *nptr)
 #include <stdio.h>
 int	main()
 {
-	char *tab = "   1234dasd";
-	printf("%d\n", atoi("   1234das"));
+	char *tab = "   1234434564654564";
+	printf("%d\n", atoi("   1234434564654564"));
 	printf("%d\n", ft_atoi(tab));
 }
 */
