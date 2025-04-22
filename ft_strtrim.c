@@ -1,47 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 19:35:12 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/22 17:05:02 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/04/22 16:45:36 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/04/22 18:15:32 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-#include <stdlib.h>
-*/
+
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_check(char c , char const *set)
 {
-	unsigned int	i;
-	unsigned int	temp;
-	char			*tab;
+	int	i;
 
 	i = 0;
-	temp = start;
-	while (s[start])
-		start++;
-	if (!s)
-		return (NULL);
-	tab = malloc(sizeof(char) * (len + 1));
-	if (!tab)
-		return (NULL);
-	while (i < len && s[temp])
+	while(set[i])
 	{
-		tab[i] = s[temp];
+		if (c == set[i])
+			return (1);
 		i++;
-		temp++;
 	}
-	tab[i] = '\0';
+	return (0);
+}
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*tab;
+	int	i;
+	int	start;
+	int	end;
+
+	i = 0;
+	start = 0;
+	if (!s1 || !set)
+		return (NULL);
+	while (s1[i])
+	{
+		if (ft_check(s1[i], set) == 0)
+			j++;
+		i++;
+	}
+	tab = malloc(sizeof(char) * j + 1);
+
 	return (tab);
 }
-/*
+#include <stdio.h>
+#include <stdlib.h>
 int	main()
 {
-	printf("%s\n", ft_substr("oussam", 3, 3));
+	printf("%s\n", ft_strtrim("oussama", "as"));
 }
-*/

@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 19:27:59 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/21 21:19:23 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:14:31 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIB_H
@@ -35,9 +35,9 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *nptr);
-void *ft_calloc(size_t nmemb, size_t size);
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *src);
-char *ft_substr(char const *s, unsigned int start, size_t len);
-
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

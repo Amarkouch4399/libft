@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 20:06:15 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/21 16:59:04 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:11:40 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	char	*tab1;
 	char	*tab2;
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
