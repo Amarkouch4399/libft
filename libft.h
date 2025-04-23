@@ -9,8 +9,8 @@
 /*   Updated: 2025/04/22 17:14:31 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIB_H
-# define LIB_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <unistd.h>
 # include <stdio.h>
