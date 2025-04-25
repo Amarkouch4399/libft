@@ -6,11 +6,16 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 10:45:27 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/24 11:03:23 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:08:48 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_len(int n)
+{
+
+}
 
 char *ft_itoa(int n)
 {
