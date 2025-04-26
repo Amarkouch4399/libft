@@ -12,76 +12,114 @@
 
 #include "libft.h"
 
-static int	ft_count_word(char const *s, char c)
+static void	ft_free(char **split, size_t index)
 {
-	int	i;
-	int	cpt;
+	while (index > 0)
+	{
+		index--;
+		free(split[index]);
+	}
+}
+
+static char	**ft_fill(char **split, char const *s, char c)
+{
+	size_t	index;
+	size_t	i;
+	size_t	j;
+
+	index = 0;
+	i = 0;
+	j = 0;
+	while (s[index])
+	{
+		if (s[index] != c)
+		{
+			split[i][j++] = s[index];
+		}
+		if (s[index] != c && (s[index + 1] == c || s[index + 1] == '\0'))
+		{
+			split[i][j] = '\0';
+			i++;
+			j = 0;
+		}
+		index++;
+	}
+	return (split);
+}
+
+static char	**ft_word(char **split, char const *s, char c)
+{
+	size_t	i;
+	size_t	index;
+	size_t	nb_word;
 
 	i = 0;
-	cpt = 0;
+	index = 0;
+	nb_word = 0;
 	while (s[i])
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
+		if (s[i] != c)
+			nb_word++;
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 		{
-			cpt++;
-			while (s[i] && s[i] != c)
-				i++;
+			split[index] = malloc(nb_word + 1);
+			if (split[index] == NULL)
+				return (ft_free(split, index), NULL);
+			nb_word = 0;
+			index++;
 		}
+		i++;
 	}
-	return (cpt);
+	return (split);
+}
+
+static size_t	ft_countstring(char const *s, char c)
+{
+	size_t	i;
+	size_t	nb_string;
+
+	i = 0;
+	nb_string = 0;
+	while (s[i])
+	{
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
+			nb_string++;
+		i++;
+	}
+	return (nb_string);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	j;
-	int	k;
-	char	**tab;
+	char	**split;
+	size_t	nb_strings;
 
-	i = 0;
-	j = 0;
-	if (!s || !c)
-		return (NULL);
-	tab = malloc(sizeof(char) * (ft_count_word(s, c) + 1));
-	if (!tab)
-		return (NULL);
-	k = 0;
-	while (s[i])
+	if (!s || *s == '\0')
 	{
-		if (s[i] != c)
-		{
-			tab[j][k] = s[i];
-			k++;
-		}
-		else if (k > 0)
-		{
-			tab[j][k] = '\0';
-			j++;
-			k = 0;
-		}
-		i++;
+		split = malloc(sizeof(char *));
+		if (!split)
+			return (NULL);
+		split[0] = NULL;
+		return (split);
 	}
-	if (k > 0)
+	nb_strings = ft_countstring(s, c);
+	split = malloc(sizeof(char *) * (nb_strings + 1));
+	if (!split)
+		return (NULL);
+	split[nb_strings] = NULL;
+	if (!ft_word(split, s, c))
+		return (free(split), NULL);
+	if (!ft_fill(split, s, c))
 	{
-		tab[j][k] = '\0';
-		j++;
+		ft_free(split, nb_strings);
+		return (free(split), NULL);
 	}
-	tab[j] = '\0';
-	return (tab); 
+	return (split);
 }
-
-int	main()
+/*
+int	main(void)
 {
-	char	*tab = "ouss|ama|amarkouch";
-	char	**res;
-
-	ft_split(tab, '|');
-	int	i = 0;
-	while (i < 3)
-	{
-		printf ("%s\n", res[i]);
-		i++;
-	}
+	char **split;
+	split = ft_split("Ouss-ama-rkouch", '-');
 }
+*/
