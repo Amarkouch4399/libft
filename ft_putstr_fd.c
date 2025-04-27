@@ -1,49 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 17:34:32 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/27 18:10:55 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/04/27 17:36:48 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/04/27 18:08:01 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putstr_fd(char *s, int fd)
 {
-	char			*tab;
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	if (!s || !f)
-		return (NULL);
-	tab = malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!tab)
-		return (NULL);
+	if (!s)
+		return ;
 	while (s[i])
 	{
-		tab[i] = f(i, s[i]);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	tab[i] = '\0';
-	return (tab);
 }
 /*
-char	ft_test(unsigned int i, char c)
+#include <fcntl.h>
+int	main()
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	else
-		return (c);
-}
+	int	fd;
+	char	*c = "OUSSAMA";
 
-int	main(void)
-{
-	char	*str = "abcdef";
-	char	*res = ft_strmapi(str, ft_test);
-
-	printf("%s\n", res);
+	fd = open("test.txt", O_CREAT | O_WRONLY);
+	if (fd < 0)
+	{
+		return(-1);
+	}
+	ft_putstr_fd(c, fd);
 }
 */

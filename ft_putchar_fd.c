@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 17:34:21 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/27 17:34:24 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/04/27 17:10:49 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/04/27 17:31:32 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
-	{
-		(*f)(i, &s[i]);
-		i++;
-	}
+	write(fd, &c, 1);
 }
 /*
-void	ft_test(unsigned int i, char *c)
+#include <fcntl.h>
+int	main()
 {
-	if (*c >= 'a' && *c <= 'z')
-		*c = *c - 32;
-}
+	int	fd;
+	char	c = 'L';
 
-int	main(void)
-{
-	char	str[] = "abcdef";
-	ft_striteri(str, ft_test);
-	printf("%s\n", str);
+	fd = open("test.txt", O_CREAT | O_WRONLY);
+	if (fd < 0)
+	{
+		return(-1);
+	}
+	ft_putchar_fd(c, fd);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:59:14 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/22 19:17:40 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/04/27 18:12:28 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static int	ft_overflow(int n)
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sign;
-	unsigned long		nb;
+	int				i;
+	int				sign;
+	unsigned long	nb;
 
 	i = 0;
 	nb = 0;
