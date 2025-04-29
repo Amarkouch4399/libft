@@ -17,8 +17,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	char	*tab;
 
 	i = 0;
-	if (nmemb == 0 || size == 0)
-		return (NULL);
 	tab = malloc((size * nmemb));
 	if (!tab)
 		return (NULL);
