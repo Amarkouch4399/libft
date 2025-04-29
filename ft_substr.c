@@ -17,24 +17,25 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	unsigned int	temp;
-	char			*tab;
+	size_t	i;
+	size_t	tab_len;
+	char	*tab;
 
 	i = 0;
-	temp = start;
-	while (s[start])
-		start++;
 	if (!s)
 		return (NULL);
+	tab_len = ft_strlen(s);
+	if (len > tab_len - start)
+		len = tab_len - start;
+	if (start >= tab_len)
+		return (ft_strdup(""));
 	tab = malloc(sizeof(char) * (len + 1));
 	if (!tab)
 		return (NULL);
-	while (i < len && s[temp])
+	while (i < len && s[start + i])
 	{
-		tab[i] = s[temp];
+		tab[i] = s[start + i];
 		i++;
-		temp++;
 	}
 	tab[i] = '\0';
 	return (tab);

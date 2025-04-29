@@ -19,10 +19,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	i = 0;
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	tab = malloc(sizeof(size) * nmemb);
+	tab = malloc((size * nmemb));
 	if (!tab)
 		return (NULL);
-	while (i < nmemb)
+	while (i < nmemb * size)
 	{
 		tab[i] = 0;
 		i++;

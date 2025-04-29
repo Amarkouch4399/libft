@@ -22,7 +22,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	tab = (unsigned char *)s;
 	if (!tab)
-		return (s);
+		return (0);
 	while (i < n)
 	{
 		tab[i] = c;
