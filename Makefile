@@ -61,6 +61,9 @@ ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
 	${RANLIB} ${NAME}
 
+bonus: $(OBJECTS) $(BOBJECTS)
+	$(AR) -r $(NAME) $?
+
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
@@ -72,4 +75,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
