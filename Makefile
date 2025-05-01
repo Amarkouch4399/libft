@@ -44,9 +44,14 @@ SRC	= ft_isalpha.c \
 	  ft_putchar_fd.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
-	  ft_putnbr_fd.c 
+	  ft_putnbr_fd.c
 
+BSOURCES = ft_lstnew.c \
+	   ft_lstadd_front.c \
+	   ft_lstsize.c \
+	   ft_lstlast.c
 OBJS	= ${SRC:.c=.o}
+BOBJECTS = $(BSOURCES:.c=.o)
 
 CC	= gcc
 CFLAGS	= -Wall -Wextra -Werror
@@ -61,14 +66,15 @@ ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
 	${RANLIB} ${NAME}
 
-bonus: $(OBJECTS) $(BOBJECTS)
-	$(AR) -r $(NAME) $?
+bonus: ${OBJS} ${BOBJECTS}
+	${AR} ${NAME} ${OBJS} ${BOBJECTS}
+	${RANLIB} ${NAME}
 
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
 clean:
-	rm -f ${OBJS}
+	rm -f ${OBJS} $(BOBJECTS)
 
 fclean: clean
 	rm -f ${NAME}
