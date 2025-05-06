@@ -6,7 +6,7 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/04/29 17:57:05 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/05/02 18:20:37 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= libft.a
@@ -46,10 +46,10 @@ SRC	= ft_isalpha.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c
 
-BSOURCES = ft_lstnew.c \
-	   ft_lstadd_front.c \
-	   ft_lstsize.c \
-	   ft_lstlast.c
+BSOURCES = ft_lstnew_bonus.c \
+	   ft_lstadd_front_bonus.c \
+	   ft_lstsize_bonus.c \
+	   ft_lstlast_bonus.c
 OBJS	= ${SRC:.c=.o}
 BOBJECTS = $(BSOURCES:.c=.o)
 
@@ -57,18 +57,15 @@ CC	= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
 AR	= ar rc
-RANLIB	= ranlib
 
 all: ${NAME}
 	@echo "Done ✅"
 
 ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
-	${RANLIB} ${NAME}
 
 bonus: ${OBJS} ${BOBJECTS}
-	${AR} ${NAME} ${OBJS} ${BOBJECTS}
-	${RANLIB} ${NAME}
+	${AR} ${NAME} ${BOBJECTS}
 
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
